@@ -22,5 +22,17 @@ button {
     height: 50px;
     border-radius: 12px;
     font-size: medium;
+    font-weight: bold;
+    text-align: start;
 }
 
+img {
+    display: block; 
+    margin: auto; 
+    width: 50%;
+    height: 200px;
+}
+
+.hide {
+    display: none;
+}
