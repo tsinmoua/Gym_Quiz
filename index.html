@@ -10,32 +10,48 @@
 </head>
 
 <body>
-    <div class = "container">
+    <div class="container">
 
-        <div>
-            <h1>How well do you know equipment and excercises found at the gym?
-                Test your knowledge about the gym.</h1>
+        <div class="instructions">
+            <h1>How well do you know equipment and excercises found at the gym?</h1>
             <br>
             <h2>Directions:</h2>
-            <p>You have 100 seconds to answer the upcoming questions.</p>
-            <p>Every wrong answer will take away 5 seconds.</p>
-            <p>Your score will be the number of seconds left when the quiz is finished.</p>
-            <p>You can see how you stack up compared to others at the end.</p>
+            <p>You have 100 seconds to answer the upcoming questions.<br>
+            Every wrong answer will take away 5 seconds.<br>
+            Your score will be the number of seconds left when the quiz is finished.<br>
+            You can see how you stack up compared to others at the end.</p>
             <br>
             <h2>Are you ready to start?</h2>
         </div>
 
-        <div>
-            <button class = "indexbtn">Yes, lets get started!</button>
+        <div class="timer"></div>
+
+        <div class="questionContainer">
+            <div>
+                <h1 class="question hide">Question</h1>
+            </div>
         </div>
-        
+
+        <div>
+            <img class="pic hide"/>
+        </div>
+
+        <div class="answerContainer hide">
+            <button class="button 1">Answer1</button>
+            <button class="button 2">Answer2</button>
+            <button class="button 3">Answer3</button>
+            <button class="button 4">Answer4</button>
+        </div>
+
+        <div>
+            <button class="start">Yes, lets get started!</button>
+        </div>
+
         <br>
 
         <div>
-            <button class = "indexbtn">No, this quiz seems too difficult. Get me out of here!</button>
+            <button class="next">No, this quiz seems too difficult. Get me out of here!</button>
         </div>
-
-        <a href = "quiz.html">Quiz</a>
     </div>
 </body>
 

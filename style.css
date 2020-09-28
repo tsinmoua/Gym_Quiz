@@ -6,6 +6,7 @@
     margin: auto;
     padding: 20px;
     width: 50%;
+    max-width: 50%;
     border: 50px;
     border-width: 10px;
     border-color: black;
