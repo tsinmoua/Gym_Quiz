@@ -97,6 +97,10 @@ function nextQuestion() {
     if (currentQuestionIndex >= questions.length) {
         finish();
     } else {
+        buttonEl1.disabled = false;
+        buttonEl2.disabled = false;
+        buttonEl3.disabled = false;
+        buttonEl4.disabled = false;
         buttonEl1.style.cssText = "background-color: white";
         buttonEl2.style.cssText = "background-color: white";
         buttonEl3.style.cssText = "background-color: white";
@@ -115,7 +119,7 @@ function finish() {
     nextEl.classList.add("hide");
     clearInterval(timeInterval);
     timerEl.textContent = "";
-    nameEl.classList.remove("hide")git 
+    nameEl.classList.remove("hide")
     submitEl.classList.remove("hide")
 }
 
@@ -127,6 +131,7 @@ function change() {
     buttonEl2.textContent = questions[currentQuestionIndex].answers[1].text;
     buttonEl3.textContent = questions[currentQuestionIndex].answers[2].text;
     buttonEl4.textContent = questions[currentQuestionIndex].answers[3].text;
+    nextEl.classList.add("hide");
 }
 
 
@@ -148,10 +153,16 @@ function showAnswer1() {
         buttonEl1.style.cssText = "background-color: red";
         nextEl.textContent = "Next Question";
         nextEl.classList.remove("hide");
+        buttonEl2.disabled = true;
+        buttonEl3.disabled = true;
+        buttonEl4.disabled = true;
     } else {
         buttonEl1.style.cssText = "background-color: green";
         nextEl.textContent = "Next Question";
         nextEl.classList.remove("hide");
+        buttonEl2.disabled = true;
+        buttonEl3.disabled = true;
+        buttonEl4.disabled = true;
     }
 }
 
@@ -162,10 +173,16 @@ function showAnswer2() {
         buttonEl2.style.cssText = "background-color: red";
         nextEl.textContent = "Next Question";
         nextEl.classList.remove("hide");
+        buttonEl1.disabled = true;
+        buttonEl3.disabled = true;
+        buttonEl4.disabled = true;
     } else {
         buttonEl2.style.cssText = "background-color: green";
         nextEl.textContent = "Next Question";
         nextEl.classList.remove("hide");
+        buttonEl1.disabled = true;
+        buttonEl3.disabled = true;
+        buttonEl4.disabled = true;
     }
 }
 
@@ -176,10 +193,16 @@ function showAnswer3() {
         buttonEl3.style.cssText = "background-color: red";
         nextEl.textContent = "Next Question";
         nextEl.classList.remove("hide");
+        buttonEl1.disabled = true;
+        buttonEl2.disabled = true;
+        buttonEl4.disabled = true;
     } else {
         buttonEl3.style.cssText = "background-color: green";
         nextEl.textContent = "Next Question";
         nextEl.classList.remove("hide");
+        buttonEl1.disabled = true;
+        buttonEl2.disabled = true;
+        buttonEl4.disabled = true;
     }
 }
 
@@ -190,10 +213,16 @@ function showAnswer4() {
         buttonEl4.style.cssText = "background-color: red";
         nextEl.textContent = "Next Question";
         nextEl.classList.remove("hide");
+        buttonEl1.disabled = true;
+        buttonEl2.disabled = true;
+        buttonEl3.disabled = true;
     } else {
         buttonEl4.style.cssText = "background-color: green";
         nextEl.textContent = "Next Question";
         nextEl.classList.remove("hide");
+        buttonEl1.disabled = true;
+        buttonEl2.disabled = true;
+        buttonEl3.disabled = true;
     }
 }
 
@@ -209,7 +238,7 @@ function timeOut() {
 
 
 function quizTimer() {
-    timeLeft = 100;
+    timeLeft = 40;
 
     timeInterval = setInterval(function () {
         timerEl.textContent = "Seconds remaining: " + timeLeft; //displays timer on screen
