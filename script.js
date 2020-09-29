@@ -16,12 +16,12 @@ var nameEl = document.querySelector("#name");
 var submitEl = document.querySelector("#submit");
 var hide = [startEl, nextEl, instructionsEl];
 var appear = [questionEl, picEl, answerContainerEl, timerEl];
+var disableButtons = [buttonEl1, buttonEl2, buttonEl3, buttonEl4];
 
 var currentQuestionIndex;
-var timeLeft; //timer start at 100 seconds
+var timeLeft;
 var timeInterval;
 
-// another way could add another object with the correct text
 var questions = [
     // Array 0
     {
@@ -87,7 +87,6 @@ function startGame() {
     quizTimer();
 }
 
-// can be put into once the correct answer or wrong answer has been clicked.
 nextEl.addEventListener("click", nextQuestion);
 
 currentQuestionIndex = 0
@@ -97,10 +96,9 @@ function nextQuestion() {
     if (currentQuestionIndex >= questions.length) {
         finish();
     } else {
-        buttonEl1.disabled = false;
-        buttonEl2.disabled = false;
-        buttonEl3.disabled = false;
-        buttonEl4.disabled = false;
+        for (let i = 0; i < disableButtons.length; i++) {
+            disableButtons[i].disabled = false;
+        }
         buttonEl1.style.cssText = "background-color: white";
         buttonEl2.style.cssText = "background-color: white";
         buttonEl3.style.cssText = "background-color: white";
@@ -146,83 +144,71 @@ buttonEl4.addEventListener("click", showAnswer4);
 // create var with the correct answers and see if it matches the event.currentTarget.value
 // could use a for loop 
 
+function disableTrue() {
+    for (let i = 0; i < disableButtons.length; i++)
+    disableButtons[i].disabled = true;
+}
+
+function wrong () {
+    timeLeft = timeLeft - 5;
+    nextEl.textContent = "Next Question";
+    nextEl.classList.remove("hide");
+}
+
+function correct () {
+    nextEl.textContent = "Next Question";
+    nextEl.classList.remove("hide");
+}
+
 function showAnswer1() {
 
     if (buttonEl1.textContent !== questions[currentQuestionIndex].correctAnswer) {
-        timeLeft = timeLeft - 5;
         buttonEl1.style.cssText = "background-color: red";
-        nextEl.textContent = "Next Question";
-        nextEl.classList.remove("hide");
-        buttonEl2.disabled = true;
-        buttonEl3.disabled = true;
-        buttonEl4.disabled = true;
+        wrong ();
+        disableTrue();
     } else {
         buttonEl1.style.cssText = "background-color: green";
-        nextEl.textContent = "Next Question";
-        nextEl.classList.remove("hide");
-        buttonEl2.disabled = true;
-        buttonEl3.disabled = true;
-        buttonEl4.disabled = true;
+        correct ();
+        disableTrue();
     }
 }
 
 function showAnswer2() {
 
     if (buttonEl2.textContent !== questions[currentQuestionIndex].correctAnswer) {
-        timeLeft = timeLeft - 5;
         buttonEl2.style.cssText = "background-color: red";
-        nextEl.textContent = "Next Question";
-        nextEl.classList.remove("hide");
-        buttonEl1.disabled = true;
-        buttonEl3.disabled = true;
-        buttonEl4.disabled = true;
+        wrong ();
+        disableTrue();
     } else {
         buttonEl2.style.cssText = "background-color: green";
-        nextEl.textContent = "Next Question";
-        nextEl.classList.remove("hide");
-        buttonEl1.disabled = true;
-        buttonEl3.disabled = true;
-        buttonEl4.disabled = true;
+        correct ();
+        disableTrue();
     }
 }
 
 function showAnswer3() {
 
     if (buttonEl3.textContent !== questions[currentQuestionIndex].correctAnswer) {
-        timeLeft = timeLeft - 5;
         buttonEl3.style.cssText = "background-color: red";
-        nextEl.textContent = "Next Question";
-        nextEl.classList.remove("hide");
-        buttonEl1.disabled = true;
-        buttonEl2.disabled = true;
-        buttonEl4.disabled = true;
+        wrong ();
+        disableTrue()
     } else {
         buttonEl3.style.cssText = "background-color: green";
-        nextEl.textContent = "Next Question";
-        nextEl.classList.remove("hide");
-        buttonEl1.disabled = true;
-        buttonEl2.disabled = true;
-        buttonEl4.disabled = true;
+        correct ();
+        disableTrue();
     }
 }
 
 function showAnswer4() {
 
     if (buttonEl4.textContent !== questions[currentQuestionIndex].correctAnswer) {
-        timeLeft = timeLeft - 5;
         buttonEl4.style.cssText = "background-color: red";
-        nextEl.textContent = "Next Question";
-        nextEl.classList.remove("hide");
-        buttonEl1.disabled = true;
-        buttonEl2.disabled = true;
-        buttonEl3.disabled = true;
+        wrong ();
+        disableTrue();     
     } else {
         buttonEl4.style.cssText = "background-color: green";
-        nextEl.textContent = "Next Question";
-        nextEl.classList.remove("hide");
-        buttonEl1.disabled = true;
-        buttonEl2.disabled = true;
-        buttonEl3.disabled = true;
+        correct ();
+        disableTrue();
     }
 }
 
@@ -258,3 +244,11 @@ function quizTimer() {
 // need localStorage.getItem
 // maybe localStorage.clear()
 // JSON.stringify() and JSON.pars()
+
+
+submitEl.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    localStorage.setItem("name", JSON.stringify(nameEl));
+
+});
