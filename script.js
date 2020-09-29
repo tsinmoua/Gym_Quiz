@@ -10,10 +10,10 @@ var buttonEl2 = document.querySelector("#button2");
 var buttonEl3 = document.querySelector("#button3");
 var buttonEl4 = document.querySelector("#button4");
 var buttonEl = document.querySelector(".btn");
-
 var startEl = document.querySelector(".start");
 var nextEl = document.querySelector(".next");
-
+var nameEl = document.querySelector("#name");
+var submitEl = document.querySelector("#submit");
 var hide = [startEl, nextEl, instructionsEl];
 var appear = [questionEl, picEl, answerContainerEl, timerEl];
 
@@ -113,8 +113,10 @@ function finish() {
     buttonEl3.style.cssText = "display: none;";
     buttonEl4.style.cssText = "display: none;";
     nextEl.classList.add("hide");
-    clearInterval(timeInterval)
+    clearInterval(timeInterval);
     timerEl.textContent = "";
+    nameEl.classList.remove("hide")git 
+    submitEl.classList.remove("hide")
 }
 
 
