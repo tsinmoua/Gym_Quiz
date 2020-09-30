@@ -19,7 +19,10 @@ Read the directions provided at the start page. Click the buttons to continue on
 N/A
 
 ## Credits/Thanks
-N/A
+Followed a tutorial https://www.youtube.com/watch?v=riDzcEQbX6k&t=1421s&ab_channel=WebDevSimplified \
+
+Thanks to my tutor session with Aylan Mello who helped me brainstorm ideas when I was coming to a dead end.
+
 
 ## License Information
 N/A
