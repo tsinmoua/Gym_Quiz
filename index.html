@@ -7,57 +7,53 @@
     <title>Gym Quiz</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="container">
-
         <div class="instructions">
             <h1>How well do you know equipment and excercises found at the gym?</h1>
             <br>
             <h2>Directions:</h2>
-            <p>You have 100 seconds to answer the upcoming questions.<br>
-            Every wrong answer will take away 5 seconds.<br>
-            Your score will be the number of seconds left when the quiz is finished.<br>
-            You can see how you stack up compared to others at the end.</p>
+            <p>You have 100 seconds to answer the upcoming questions.
+                <br>
+                Every wrong answer will take away 5 seconds.
+                <br>
+                Correct answers will turn green, wrong aswers will turn red.
+                <br>
+                Your score will be the number of seconds left when the quiz is finished.
+                <br>
+                You can see how you stack up compared to others at the end.
+            </p>
             <br>
-            <h2>Are you ready to start?</h2>
+            <h2 id="header">Are you ready to start?</h2>
         </div>
-
         <div class="timer hide"></div>
-
-        
-
         <div class="questionContainer">
             <div>
                 <h1 class="question hide">Question</h1>
             </div>
         </div>
-
         <div>
-            <img class="pic hide"/>
+            <img class="pic hide" />
         </div>
-
         <div class="answerContainer hide">
             <button id="button1" class="btn">Answer1</button>
             <button id="button2" class="btn">Answer2</button>
             <button id="button3" class="btn">Answer3</button>
             <button id="button4" class="btn">Answer4</button>
         </div>
-
         <div>
             <button class="start">Yes, lets get started!</button>
         </div>
-
         <br>
-
         <div>
             <button class="next hide">Next Question</button>
         </div>
-
         <form id="scorename">
-            <input class="hide" type="text" name="name" id="name" placeholder="Name"/>
-            <button id="submit" class ="hide">Submit</button>
+            <input class="hide" type="text" name="name" id="name" placeholder="Name" />
+            <button id="submit" class="hide">Submit</button>
         </form>
 
     </div>

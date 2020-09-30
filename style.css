@@ -1,11 +1,13 @@
 * {
-
+    color: white;
+    font-family: 'Staatliches', cursive;
 }
 
 .container {
     margin: auto;
-    padding: 20px;
-    width: 50%;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 40%;
     max-width: 50%;
     border: 50px;
     border-width: 10px;
@@ -14,7 +16,7 @@
 }
 
 body {
-    background-color: rgb(214, 214, 214);
+    background-image: url("https://img.wallpapersafari.com/desktop/1920/1080/92/46/MFysuj.jpg");
 }
 
 button {
@@ -22,10 +24,11 @@ button {
     margin: auto;
     height: 50px;
     border-radius: 12px;
-    font-size: medium;
+    font-size: large;
     font-weight: bold;
     text-align: start;
     background-color: white;
+    color: black;
 }
 
 img {
