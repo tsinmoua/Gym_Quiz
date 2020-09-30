@@ -233,6 +233,7 @@ submitEl.addEventListener("click", function (event) {
         alert("Please enter in your name.")
     } else {
         submitEl.disabled = true;
+        submitEl.classList.add("hide")
         localStorage.setItem("name", user);
         highScoreLog()
         instructionsEl.classList.remove("hide");
@@ -241,6 +242,7 @@ submitEl.addEventListener("click", function (event) {
         instructionsEl.removeChild(document.querySelector("h2"));
         instructionsEl.removeChild(document.querySelector("p"));
         headerEl.textContent = "High Scores:";
+        headerEl.style.cssText = "font-size: 60px"
         var list = document.createElement("ol");
         instructionsEl.appendChild(list);
         list.className = "list";

@@ -3,6 +3,10 @@
     font-family: 'Staatliches', cursive;
 }
 
+.instructions {
+    font-size: larger;
+}
+
 .container {
     margin: auto;
     padding-left: 50px;
@@ -11,12 +15,18 @@
     max-width: 50%;
     border: 50px;
     border-width: 10px;
-    border-color: black;
-    border-style: solid;
 }
 
 body {
     background-image: url("https://img.wallpapersafari.com/desktop/1920/1080/92/46/MFysuj.jpg");
+}
+
+#name {
+    width: 50%;
+    height: 50px;
+    margin: auto;
+    color: black;
+    font-size: large;
 }
 
 button {
@@ -24,7 +34,7 @@ button {
     margin: auto;
     height: 50px;
     border-radius: 12px;
-    font-size: large;
+    font-size: 25px;
     font-weight: bold;
     text-align: start;
     background-color: white;
