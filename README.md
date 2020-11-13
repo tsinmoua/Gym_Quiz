@@ -13,7 +13,7 @@ Most of the code is provided through the use of javascript by dynamically creati
 ## Usage Instructions
 Read the directions provided at the start page. Click the buttons to continue on with the quiz. At the end you will be able to put your name down to see how you compare with others who took the quiz.
 
-![Image of the site](site.jpg)
+![Image of the site](./assets/site.jpg)
 
 ## Installion Instructions
 N/A
